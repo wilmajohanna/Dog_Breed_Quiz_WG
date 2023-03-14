@@ -1,0 +1,65 @@
+* {
+    font-family: Roboto;
+}
+
+.quiz {
+    display: none;
+}
+
+.register {
+    display: none;
+}
+
+#wrapper {
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.login_register>p {
+    text-align: center;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+.username>p,
+.pawssword>p {
+    margin-bottom: 2px;
+    margin-top: 10px;
+}
+
+
+input {
+    padding: 8px;
+    width: 95%;
+}
+
+.inspo_text {
+    text-align: center;
+}
+
+
+#login_button,
+#register_button {
+    justify-self: center;
+    background-color: rgb(247, 180, 173);
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    width: 95%;
+}
+
+.login_button>p {
+    text-align: center;
+}
+
+
+.register_link {
+    text-align: center;
+    margin-top: 40px;
+    color: white;
+}
