@@ -7,9 +7,8 @@ async function fetch_login(request) {
 
     const get_req = new Request(`https://www.teaching.maumt.se/apis/access/?action=check_credentials&user_name=${user_field.value}&password=${pass_field.value}`);
 
-    console.log(fetch_function(get_req));
 
-    console.log("Contacting Server...");
+    loading_alert("Contacting Server...");
 
     try {
 
