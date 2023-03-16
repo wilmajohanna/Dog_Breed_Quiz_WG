@@ -12,6 +12,7 @@ async function fetch_login(request) {
     console.log("Contacting Server...");
 
     try {
+
         let response = await fetch(get_req);
         let resource = await response.json();
         // console.log(response);
@@ -30,28 +31,36 @@ async function fetch_login(request) {
     }
 
 };
+
 function switch_page(event) {
 
+    let wrapper = document.querySelector("#wrapper");
+    let register_link = document.querySelector(".register_link");
     let register_button = document.querySelector("#register_button");
     let login_button = document.querySelector("#login_button");
+    let h1 = document.querySelector("h1");
+    let inspo_text = document.querySelector(".inspo_text");
 
-    if (document.querySelector(".register_link").textContent === "Already have an account? Go to login") {
-        document.querySelector(".register_link").textContent = "New to this? Register for free";
 
-        document.querySelector("h1").textContent = "LOGIN";
-        document.querySelector(".inspo_text").textContent = "Let the magic start!";
+    if (register_link.textContent === "Already have an account ? Go to login") {
+        register_link.textContent = "New to this ? Register for free";
+
+        h1.textContent = "LOGIN";
+        inspo_text.textContent = "Let the magic start!";
+
         register_button.style.visibility = "hidden";
         login_button.style.visibility = "visible";
-        document.querySelector("#wrapper").style.animationName = "login_page";
+        wrapper.style.animationName = "login_page";
 
     } else {
 
-        document.querySelector(".register_link").textContent = "Already have an account? Go to login";
-        document.querySelector("h1").textContent = "REGISTER";
-        document.querySelector(".inspo_text").textContent = "Ready when you are...";
+        register_link.textContent = "Already have an account? Go to login";
+        h1.textContent = "REGISTER";
+        inspo_text.textContent = "Ready when you are...";
+
         login_button.style.visibility = "hidden";
         register_button.style.visibility = "visible";
-        document.querySelector("#wrapper").style.animationName = "register_page";
+        wrapper.style.animationName = "register_page";
     }
 
 

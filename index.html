@@ -5,10 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./media/logo.png">
+
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/login_register.css">
+
+    <script defer src="js/data.js"></script>
+    <script defer src="js/server_connection.js"></script>
+    <script defer src="js/login_register.js"></script>
+    <script defer src="js/quiz.js"></script>
     <script defer src="index.js"></script>
-    <title>Document</title>
+
+    <title>Dog Breed Quiz</title>
 
 </head>
 
@@ -32,24 +40,26 @@
 
             <div class="username">
                 <p>User Name:</p>
-                <input type="User Name">
+                <input type="text">
             </div>
 
             <div class="password">
                 <p>Password:</p>
-                <input type="Password">
+                <input type="password">
             </div>
 
             <p class="inspo_text">Let the magic start!</p>
-            <button id="login_button">Login</button>
-            <button id="register_button" class="register">Register</button>
+            <div id="button">
+                <button id="login_button">Login</button>
+                <button id="register_button" class="register">Register</button>
+            </div>
 
             <p class="register_link">New to this? Register for free</p>
         </section>
 
 
         <section id="quiz" class="quiz">
-            <img src="" id="img" class="quiz"></img>
+            <img src="" alt="picture of a dog" id="img" class="quiz"></img>
 
             <div class="quiz" id="alt">
                 <button class="alt_quiz">hej och hå</button>
