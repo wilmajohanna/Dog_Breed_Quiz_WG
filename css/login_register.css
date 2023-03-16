@@ -7,7 +7,7 @@
 }
 
 .register {
-    display: none;
+    visibility: hidden;
 }
 
 #wrapper {

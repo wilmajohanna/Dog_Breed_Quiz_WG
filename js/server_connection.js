@@ -5,4 +5,4 @@ async function fetch_function(request) {
 
 };
 
-fetch_function("dog");
+/* fetch_function("dog"); */
