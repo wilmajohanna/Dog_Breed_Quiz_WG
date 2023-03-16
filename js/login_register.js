@@ -14,8 +14,9 @@ async function fetch_login(request) {
 
         let response = await fetch(get_req);
         let resource = await response.json();
-        // console.log(response);
+
         console.log(resource);
+        remove_loading_alert();
 
         if (response.status === 404) {
             console.log("Not found");
