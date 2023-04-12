@@ -67,11 +67,11 @@ footer {
     position: absolute;
     align-items: center;
     justify-content: center;
+    border-radius: 30px;
 
 }
 
-#white_box>div {
-
+#white_box>.loading_text {
     height: 70px;
     width: 300px;
     text-align: center;
@@ -85,7 +85,7 @@ footer {
     justify-content: center;
 }
 
-#white_box>div::after {
+#white_box>.loading_text::after {
     content: "";
     animation-name: dots;
     animation-duration: 3s;
@@ -111,4 +111,28 @@ footer {
         content: "..."
     }
 
+}
+
+.teapot_popup {
+    height: 100px;
+    width: 300px;
+    text-align: center;
+    font-size: 20px;
+    background-color: coral;
+    color: whitesmoke;
+    border-radius: 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.teapot_popup>button {
+    background-color: white;
+    color: coral;
+    margin-top: 10px;
+    height: 30px;
+    width: 70px;
 }
