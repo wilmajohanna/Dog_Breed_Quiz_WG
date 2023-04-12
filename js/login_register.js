@@ -1,30 +1,37 @@
 "use strict"
 
-async function fetch_login(request) {
+async function login_fetch(request) {
 
     const user_field = document.querySelector(".username > input");
     const pass_field = document.querySelector(".password > input");
 
-    const get_req = new Request(`https://www.teaching.maumt.se/apis/access/?action=check_credentials&user_name=${user_field.value}&password=${pass_field.value}`);
+    const get_request = new Request(`https://www.teaching.maumt.se/apis/access/?action=check_credentials&user_name=${user_field.value}&password=${pass_field.value}`);
 
 
     loading_alert("Contacting Server...");
 
     try {
 
-        let response = await fetch(get_req);
+        let response = await fetch(get_request);
         let resource = await response.json();
 
         console.log(resource);
         remove_loading_alert();
+
+        if (response.status === 200) {
+            document.querySelector("#css_file").href = "./css/quiz.css"
+        };
 
         if (response.status === 404) {
             console.log("Not found");
         };
 
         if (response.status === 418) {
-            console.log("The server thinks it's not a teapot");
+            teapot_alert("The server thinks it's not a teapot");
         };
+
+        user_field.value = "";
+        pass_field.value = "";
 
     } catch (error) {
         console.log(error);
@@ -42,7 +49,7 @@ function switch_page(event) {
     let inspo_text = document.querySelector(".inspo_text");
 
 
-    if (register_link.textContent === "Already have an account ? Go to login") {
+    if (register_link.textContent === "Already have an account? Go to login") {
         register_link.textContent = "New to this ? Register for free";
 
         h1.textContent = "LOGIN";
@@ -65,3 +72,44 @@ function switch_page(event) {
 
 
 }
+
+async function register_fetch(request) {
+
+
+    const user_field = document.querySelector(".username > input");
+    const pass_field = document.querySelector(".password > input");
+    const post_request = new Request(`https://teaching.maumt.se/apis/access/`);
+
+    loading_alert("Contacting Server...");
+
+    try {
+        const post = {
+            action: "register",
+            user_name: user_field.value,
+            password: pass_field.value,
+        };
+
+        const options = {
+            method: "POST",
+            headers: { "Content-type": "application/json; charset =UTF-8" },
+            body: JSON.stringify(post),
+        };
+
+        let response = await fetch_function(post_request, options);
+        let resource = await response.json();
+        console.log(resource);
+
+        remove_loading_alert();
+
+        user_field.value = "";
+        pass_field.value = "";
+        return resource;
+
+
+    } catch (error) {
+        console.log(error);
+        fetch_function("post", post_request);
+    };
+
+};
+
