@@ -10,12 +10,6 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/login_register.css" id="css_file">
 
-    <script defer src="js/data.js"></script>
-    <script defer src="js/server_connection.js"></script>
-    <script defer src="js/login_register.js"></script>
-    <script defer src="js/quiz.js"></script>
-    <script defer src="index.js"></script>
-
     <title>Dog Breed Quiz</title>
 
 </head>
@@ -28,8 +22,6 @@
             <p class="title">Dog Breed Quiz</p>
 
             <section id="name" class="quiz">
-                <p> Wilma J </p>
-                <button class="log_out">logout</button>
             </section>
 
         </header>
@@ -39,7 +31,7 @@
             <h1 class="login">LOGIN</h1>
 
             <div class="username">
-                <p>User Name:</p>
+                <p>Username:</p>
                 <input type="text">
             </div>
 
@@ -61,20 +53,22 @@
         <section id="quiz" class="quiz">
             <img src="" alt="dog pic" id="dog_img" class="quiz"></img>
 
-            <div class="quiz" id="alt">
-                <button class="alt_quiz">hej och hå</button>
-                <button class="alt_quiz"></button>
-                <button class="alt_quiz"></button>
-                <button class="alt_quiz"></button>
+            <div class="quiz" id="alt_quiz">
             </div>
         </section>
+
 
         <footer>
             <p>The Dog Breed Quiz is made possible thanks to the free API by <a href="https://dog.ceo/dog-api">DOG CEO
                     Zine</a></p>
         </footer>
-
     </div>
+
+    <script src="./js/data.js"></script>
+    <script src="./js/server_connection.js"></script>
+    <script src="./js/login_register.js"></script>
+    <script src="./js/quiz.js"></script>
+    <script src="./index.js"></script>
 
 </body>
 
