@@ -17,11 +17,9 @@ async function login_fetch(request) {
         remove_loading_alert();
 
         if (response.status === 200) {
-            let current_user = window.localStorage.setItem("user_name", data.user_field);
+            window.localStorage.setItem("user_name", user_field.value);
             activate_quiz(user_field.value);
-            if (current_user !== null) {
-                document.querySelector("#name> p")
-            }
+
         };
 
         if (response.status === 400) {
@@ -132,6 +130,17 @@ async function register_fetch(request) {
     } catch (error) {
         console.log(error);
 
+    };
+
+};
+
+
+function refresh_page() {
+
+    if (window.localStorage.getItem("user_name") !== null) {
+        activate_quiz(localStorage.getItem("user_name"));
+    } else {
+        document.querySelector("#css_file").href = "./css/login_register.css"
     };
 
 };

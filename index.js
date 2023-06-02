@@ -6,3 +6,4 @@ document.querySelector("#register_button").addEventListener("click", register_fe
 
 document.querySelector(".register_link").addEventListener("click", switch_page);
 
+refresh_page(localStorage.getItem("user_name"));

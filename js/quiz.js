@@ -23,8 +23,8 @@ async function activate_quiz(user_name) {
 
 
     function log_out() {
-        location.reload();
-        document.querySelector("#css_file").href = "./css/login_register.css"
+        localStorage.clear();
+        refresh_page();
     };
 
     document.querySelector("#log_out").addEventListener("click", log_out);
