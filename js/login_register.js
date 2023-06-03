@@ -110,7 +110,7 @@ async function register_fetch(request) {
         };
 
         if (response.status === 400) {
-            alert_message("There seems to be a Network Error, please check you're connection");
+            alert_message("Sorry, that name is taken. Please try another one");
 
         };
 

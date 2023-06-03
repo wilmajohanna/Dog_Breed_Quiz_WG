@@ -24,7 +24,7 @@ async function activate_quiz(user_name) {
 
     function log_out() {
         localStorage.clear();
-        refresh_page();
+        location.reload();
     };
 
     document.querySelector("#log_out").addEventListener("click", log_out);
